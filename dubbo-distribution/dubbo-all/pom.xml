@@ -89,6 +89,13 @@
         </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-remoting-etcd3</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-rpc-api</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
@@ -187,6 +194,13 @@
         </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-etcd3</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-monitor-api</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
@@ -257,6 +271,13 @@
         </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-configcenter-etcd</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-compatible</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
@@ -286,6 +307,13 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-metadata-report-redis</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-metadata-report-etcd</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
             <optional>true</optional>
@@ -378,6 +406,7 @@
                                     <include>org.apache.dubbo:dubbo-remoting-netty</include>
                                     <include>org.apache.dubbo:dubbo-remoting-netty4</include>
                                     <include>org.apache.dubbo:dubbo-remoting-zookeeper</include>
+                                    <include>org.apache.dubbo:dubbo-remoting-etcd3</include>
                                     <include>org.apache.dubbo:dubbo-rpc-api</include>
                                     <include>org.apache.dubbo:dubbo-rpc-dubbo</include>
                                     <include>org.apache.dubbo:dubbo-rpc-injvm</include>
@@ -389,6 +418,7 @@
                                     <include>org.apache.dubbo:dubbo-registry-default</include>
                                     <include>org.apache.dubbo:dubbo-registry-multicast</include>
                                     <include>org.apache.dubbo:dubbo-registry-zookeeper</include>
+                                    <include>org.apache.dubbo:dubbo-registry-etcd3</include>
                                     <include>org.apache.dubbo:dubbo-registry-nacos</include>
                                     <include>org.apache.dubbo:dubbo-registry-multiple</include>
                                     <include>org.apache.dubbo:dubbo-registry-kubernetes</include>
@@ -404,10 +434,12 @@
                                     <include>org.apache.dubbo:dubbo-configcenter-api</include>
                                     <include>org.apache.dubbo:dubbo-configcenter-apollo</include>
                                     <include>org.apache.dubbo:dubbo-configcenter-zookeeper</include>
+                                    <include>org.apache.dubbo:dubbo-configcenter-etcd</include>
                                     <include>org.apache.dubbo:dubbo-configcenter-nacos</include>
                                     <include>org.apache.dubbo:dubbo-metadata-api</include>
                                     <include>org.apache.dubbo:dubbo-metadata-report-redis</include>
                                     <include>org.apache.dubbo:dubbo-metadata-report-zookeeper</include>
+                                    <include>org.apache.dubbo:dubbo-metadata-report-etcd</include>
                                     <include>org.apache.dubbo:dubbo-qos</include>
                                     <include>org.apache.dubbo:dubbo-auth</include>
                                 </includes>
@@ -505,6 +537,12 @@
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>
                                         META-INF/dubbo/internal/org.apache.dubbo.remoting.zookeeper.ZookeeperTransporter
+                                    </resource>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource>
+                                        META-INF/dubbo/internal/org.apache.dubbo.remoting.etcd.EtcdTransporter
                                     </resource>
                                 </transformer>
                                 <transformer
