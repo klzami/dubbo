@@ -65,11 +65,5 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>io.etcd</groupId>
-            <artifactId>jetcd-all</artifactId>
-        </dependency>
-
     </dependencies>
 </project>
