@@ -1,0 +1,24 @@
+server:
+  port: 8091
+
+dubbo:
+  scan:
+    base-packages: org.apache.dubbo.demo
+  application:
+    qos-enable: false
+    logger: slf4j
+    name: dubbo-demo-provider
+    owner: dev
+  config-center:
+    timeout: 10000
+    address: etcd://127.0.0.1:2379
+    group: test
+  metadata-report:
+    address: tcd://127.0.0.1:2379
+  registry:
+    timeout: 10000
+    address: etcd3://127.0.0.1:2379
+  provider:
+    group: test
+    version: 1.0.0
+    check: false
