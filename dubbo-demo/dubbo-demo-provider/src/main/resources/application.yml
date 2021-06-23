@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8080
 
 dubbo:
   scan:
@@ -14,7 +14,7 @@ dubbo:
     address: etcd://127.0.0.1:2379
     group: test
   metadata-report:
-    address: tcd://127.0.0.1:2379
+    address: etcd://127.0.0.1:2379
   registry:
     timeout: 10000
     address: etcd3://127.0.0.1:2379

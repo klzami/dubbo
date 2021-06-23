@@ -1,13 +1,13 @@
-package org.apache.dubbo.demo.consumer;
+package org.apache.dubbo.demo.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class ProviderStart {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ProviderStart.class, args);
 	}
 
 }

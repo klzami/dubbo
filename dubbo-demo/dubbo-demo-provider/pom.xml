@@ -4,14 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.apache.dubbo</groupId>
-        <artifactId>dubbo-demo</artifactId>
-        <version>${revision}</version>
-    </parent>
-
+    <groupId>org.apache.dubbo</groupId>
     <artifactId>dubbo-demo-provider</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,12 +16,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-demo-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -38,6 +27,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring-boot.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mockito-core</artifactId>
+                    <groupId>org.mockito</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- dubbo -->
